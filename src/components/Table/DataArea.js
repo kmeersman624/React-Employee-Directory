@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Table from "./components/Table/Table";
 import API from "./Utils/API";
+import DataAreaContext from "../../Utils/DataAreaContext",
 
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
