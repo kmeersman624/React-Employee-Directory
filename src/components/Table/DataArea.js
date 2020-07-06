@@ -1,8 +1,8 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Table from "./components/Table/Table";
-import API from "./Utils/API";
-import DataAreaContext from "../../Utils/DataAreaContext",
+import React, { useState, useEffect } from "react";
+import Navbar from "../Navbar/Navbar";
+import DataTable from "./DataTable";
+import API from "../../Utils/API";
+import DataAreaContext from "../../Utils/DataAreaContext";
 
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
@@ -19,27 +19,27 @@ const DataArea = () => {
   });
 
   const handleSort = (heading) => {
-    if (this.state.order === "descend") {
-      this.setState({
+    if (developerState.order === "descend") {
+      setDeveloperState({
         order: "ascend",
       });
     } else {
-      this.setState({
+      setDeveloperState({
         order: "descend",
       });
     }
     const compareFnc = (a, b) => {
-      if (this.state.order === "ascend") {
+      if (developerState.order === "ascend") {
         if (a[heading] === undefined) {
           return 1;
         } else if (b[heading] === undefined) {
           return -1;
         } else if (heading === "name") {
           return a[heading].first.localeCompare(b[heading].first);
-        } else if (heading === "dob") {
-          return a[heading].age - b[heading].age;
+          // } else if (heading === "dob") {
+          //   return a[heading].age - b[heading].age;
         } else {
-          return a[heading].localeCompare(b[heading]);
+          return b[heading] - a[heading];
         }
       } else {
         if (a[heading] === undefined) {
@@ -48,22 +48,17 @@ const DataArea = () => {
           return -1;
         } else if (heading === "name") {
           return b[heading].first.localeCompare(a[heading].first);
-        } else if (heading === "dob") {
-          return b[heading].age - a[heading].age;
+          // } else if (heading === "dob") {
+          //   return b[heading].age - a[heading].age;
         } else {
-          return b[heading].localeCompare(a[heading]);
+          return b[heading] - a[heading];
         }
       }
     };
     const sortedUsers = developerState.filteredUsers.sort(compareFnc);
-    const updatedHeadings = developerState.headings.map((elem) => {
-      localStorage, (order = elem.name === heading ? currentOrder : elem.order);
-      return elem;
-    });
     setDeveloperState({
       ...developerState,
       filteredUsers: sortedUsers,
-      headings: updatedHeadings,
     });
   };
 
@@ -83,7 +78,7 @@ const DataArea = () => {
         filteredUsers: results.data.results,
       });
     });
-  }, []);
+  }, );
 
   return (
     <DataAreaContext.Provider
@@ -91,7 +86,7 @@ const DataArea = () => {
     >
       <Navbar />
       <div className="data-area">
-        {developerState.filteredUsers.length > 0 ? <Table /> : <div></div>}
+        {developerState.filteredUsers.length > 0 ? <DataTable /> : <div></div>}
       </div>
     </DataAreaContext.Provider>
   );

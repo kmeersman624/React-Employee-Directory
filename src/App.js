@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Table from './components/Table/Table';
+import DataTable from './components/Table/DataTable';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
           <h3>Click on carrots to filter by heading or use search to search by name</h3>
         </header>
         <Navbar />
-        <Table />
+        <DataTable />
     </div>
   );
 }
