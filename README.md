@@ -4,7 +4,7 @@
   This is an employee directory with React. It breaks up your application's UI into components, manages component state, and responds to user events.
 
 
-  Link to depolyed application:
+  Link to depolyed application: https://kmeersman624.github.io/React-Employee-Directory/
 
 
   ![GitHub repo size](https://img.shields.io/github/repo-size/kmeerman624/React-Employee-Directory)
