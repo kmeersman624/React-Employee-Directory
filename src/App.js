@@ -49,8 +49,8 @@ class App extends React.Component {
         <header className="Header">
           <h1>Employee Directory</h1>
           <h5>
-            Click on name column to sort alphabetically or use search to search
-            by name
+            Click on name column to sort alphabetically or type text into search
+            box for specific results
           </h5>
         </header>
         <input
@@ -65,8 +65,9 @@ class App extends React.Component {
           <thead>
             <tr>
               <th>Photo</th>
-              <th className="name" onClick={this.sort}>
-                Name
+              <th 
+              // className="name" onClick={this.sort}
+              >Name
                 <button>▲</button>
                 <button>▼</button>
               </th>
