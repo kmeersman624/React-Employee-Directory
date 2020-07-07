@@ -46,16 +46,15 @@ class App extends React.Component {
     const { employees, search } = this.state;
     return (
       <div className="App">
-        <header className="Header"
-        // onClick={() => }
-        >
+        <header className="Header">
           <h1>Employee Directory</h1>
           <h5>
-            Click on name column to sort alphabetically or use search to search by
-            name
+            Click on name column to sort alphabetically or use search to search
+            by name
           </h5>
         </header>
-        <input className="input mt-3 mb-3"
+        <input
+          className="input mt-3 mb-3"
           type="text"
           name="search"
           placeholder="Text to search"
@@ -66,7 +65,11 @@ class App extends React.Component {
           <thead>
             <tr>
               <th>Photo</th>
-              <th>Name</th>
+              <th className="name" onClick={this.sort}>
+                Name
+                <button>▲</button>
+                <button>▼</button>
+              </th>
               <th>DOB</th>
               <th>Phone</th>
               <th>Email</th>

@@ -3,24 +3,32 @@
   ## Description
   This is an employee directory with React. It breaks up your application's UI into components, manages component state, and responds to user events.
 
+
+  Link to depolyed application:
+
+
   ![GitHub repo size](https://img.shields.io/github/repo-size/kmeerman624/React-Employee-Directory)
 
   ## Table of Contents
+  * [Image](#image)
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
-  * [Test](#tests)
   * [Questions](#questions) 
+
+  ## Image
+
+  ![image of app](./public/directory.PNG)
 
   ## Installation
   Given a table of random users, when the user loads the page, a table of employees should render. 
 
-  The user should be able to:
+  The user can:
 
-  * Sort the table by at least one category
+  * Search with input field
 
-  * Filter the users by at least one property.
+  * Filter the users by name.
 
   ## Usage
   As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
@@ -32,12 +40,6 @@
 
   ## Contributing
   Kate Meersman
-
-  ## Tests
-
-  ![image of test](./assets/images/readme1.PNG)
-
-  ![image of test](./assets/images/readme2.PNG)
 
   ## Questions
   * katie4682@yahoo.com
