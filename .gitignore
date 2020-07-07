@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Tucker - adding yarn.lock so I don't conflict with your package-lock.json
+yarn.lock
